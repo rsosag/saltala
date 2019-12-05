@@ -1,0 +1,22 @@
+
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+  <h1><%= @corporation.name %></h1>
+  <p class="lead">
+    <strong>Name:</strong>
+    <%= @corporation.name %>
+  </p>
+
+  <p class="lead">
+    <strong>Rut:</strong>
+    <%= @corporation.rut %>
+  </p>
+
+  <p class="lead">
+    <strong>Surcursal:</strong>
+    <%= @corporation.subsidiary %>
+  </p>
+</div>
+<%= link_to 'Editar', edit_corporation_path(@corporation), class: 'btn btn-primary' %>
+<%= link_to 'Volver', corporations_path, class: 'btn btn-primary' %>

@@ -1,0 +1,36 @@
+<!--For modal example-->
+<%#= form_with(model: corporation, local: false) do |form| %>
+
+<%= form_with(model: corporation, local: true) do |form| %>
+
+  <% if corporation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(corporation.errors.count, "error") %> prohibited this corporation from being saved:</h2>
+      <ul>
+        <% corporation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group col-md-12">
+      <%= form.label :name, 'Nombre' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= form.label :rut, 'RUT' %>
+      <%= form.text_field :rut, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= form.label :surcursal_id, 'Sucursal' %>
+      <%= form.select :surcursal_id, Subsidiary.all.collect { |s| [s.name, s.id] }, {}, class: 'form-control' %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+  </div>
+<% end %>
+

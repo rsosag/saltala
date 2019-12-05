@@ -1,0 +1,6 @@
+<h1>Editar usuario</h1>
+<%= form_for @user, url: { action: :update }, local: true do |form| %>
+
+  <%= render partial: 'form', locals: { form: form, user: @user } %>
+
+<% end %>

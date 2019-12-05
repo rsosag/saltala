@@ -1,0 +1,7 @@
+<h1>Nuevo usuario</h1>
+
+<%= form_for @user, url: {action: :create }, local: true do |form| %>
+
+  <%= render partial: 'form', locals: { form: form, user: @user } %>
+
+<% end %>

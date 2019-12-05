@@ -1,0 +1,16 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom top-menu">
+  <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse top-menu" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active profile">
+        <%= link_to '<span class="fa fa-user fa-fw"></span> Tu perfil'.html_safe, {controller: :users, action: :show, id: current_user }, class: 'nav-link' %>
+      </li>
+      </ul>
+  </div>
+</nav>

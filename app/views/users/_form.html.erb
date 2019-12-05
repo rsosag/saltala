@@ -1,0 +1,39 @@
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this corporation from being saved:</h2>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group col-md-12">
+      <%= form.label :first_name, 'Nombre' %>
+      <%= form.text_field :first_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= form.label :last_name, 'Apellidos' %>
+      <%= form.text_field :last_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= form.label :email, 'Correo' %>
+      <%= form.text_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= form.label :password, 'Contraseña' %>
+      <%= form.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= form.label :corporation_id, 'Coporación' %>
+      <%= form.select :corporation_id, Corporation.all.collect { |s| [s, s.id] }, {}, class: 'form-control' %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+

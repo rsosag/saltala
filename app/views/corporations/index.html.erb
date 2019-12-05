@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<div style="float: right">
+<!--  <a class="btn btn-primary new-button" href="<%#= new_corporation_path %>" data-toggle="modal" data-target="#formModalNew">-->
+<!--    <span class="fa fa-plus-circle fa-fw"></span> New Corporation-->
+<!--  </a>-->
+  <%= link_to '<span class="fa fa-plus-circle fa-fw"></span> Nueva corp'.html_safe, new_corporation_path, class: 'btn btn-primary new-button' %>
+</div>
+<div class="table-list">
+  <h3>Listado de Corporaciones / Divisiones</h3>
+  <div class="w3-padding w3-white notranslate">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>RUT</th>
+          <th>Sucursal</th>
+          <th>Config</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @corporations.each do |corporation| %>
+          <tr>
+            <td><%= corporation.name %></td>
+            <td><%= corporation.rut %></td>
+            <td><%= corporation.subsidiary %></td>
+            <td>
+              <%= link_to '<span class="fa fa-pencil fa-fw"></span>'.html_safe, edit_corporation_path(corporation) %>
+              <%= link_to '<span class="fa fa-trash fa-fw"></span>'.html_safe, corporation, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+
+<!-- Modal -->
+<%#= render 'corporations/new' %>
+

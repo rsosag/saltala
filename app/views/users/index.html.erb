@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div style="float: right">
+  <%= link_to '<span class="fa fa-plus-circle fa-fw"></span> Nuevo usuario'.html_safe, users_new_path, class: 'btn btn-primary new-button' %>
+</div>
+<div class="table-list">
+  <h3>Listado de Usuarios</h3>
+  <div class="w3-padding w3-white notranslate">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Corporación</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.first_name, { action: :show, id: user} %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.corporation %></td>
+            <td>
+              <%= link_to '<span class="fa fa-pencil fa-fw"></span>'.html_safe, {action: :edit, id: user} %>
+              <%= link_to '<span class="fa fa-trash fa-fw"></span>'.html_safe, { action: :destroy, id: user }, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+
+<!-- Modal -->
+<%#= render 'corporations/new' %>
+

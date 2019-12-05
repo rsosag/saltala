@@ -1,0 +1,27 @@
+<!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="sidebar-heading"><%= image_tag 'white_logo.png' %> </div>
+  <div class="list-group list-group-flush ">
+
+    <a href="<%= corporations_path %>" class="list-group-item list-group-item-action sidebar-links <%= 'active' if controller_name == 'corporations' %>">
+      <span class="fa fa-user fa-fw"></span>
+      Corporaciones
+    </a>
+
+    <a href="<%= users_path %>" class="list-group-item list-group-item-action sidebar-links <%= 'active' if controller_name == 'users' %>">
+      <span class="fa fa-user fa-fw"></span>
+      Usuarios
+    </a>
+    <a href="#" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-home fa-fw"></span>Sucursales</a>
+    <a href="#" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-comment fa-fw"></span>Atenciones</a>
+    <a href="#" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-bar-chart fa-fw"></span>Estadísticas</a>
+    <a href="#" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-book fa-fw"></span>Componentes</a>
+    <a href="#" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-file fa-fw"></span>Contenidos</a>
+    <a href="#" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-tv fa-fw"></span>Monitores</a>
+  </div>
+  <hr>
+  <div>
+    <a href="<%= destroy_user_session_path %>" class="list-group-item list-group-item-action sidebar-links"><span class="fa fa-window-close fa-fw"></span>Cerrar Sesión</a>
+
+  </div>
+</div>

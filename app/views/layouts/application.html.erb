@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saltala</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<div class="d-flex" id="wrapper">
+  <% if current_user %>
+    <!-- /#sidebar-wrapper -->
+    <%= render 'layouts/sidebar' %>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <!-- /#top-menu -->
+      <%= render 'layouts/top_menu' %>
+
+      <%= yield %>
+
+    </div>
+
+    <% else %>
+    <div id="page-content-wrapper">
+      <%= yield %>
+
+    </div>
+    <% end %>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
+</body>
+
+</html>

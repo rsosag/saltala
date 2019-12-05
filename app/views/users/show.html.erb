@@ -1,0 +1,27 @@
+
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+  <h1><%= @user.full_name %></h1>
+  <p class="lead">
+    <strong>Nombre:</strong>
+    <%= @user.first_name %>
+  </p>
+
+  <p class="lead">
+    <strong>Apellidos:</strong>
+    <%= @user.last_name %>
+  </p>
+
+  <p class="lead">
+    <strong>Correo:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p class="lead">
+    <strong>Corporación:</strong>
+    <%= @user.corporation %>
+  </p>
+</div>
+<%= link_to 'Editar', { action: :edit, id: @user }, class: 'btn btn-primary' %>
+<%= link_to 'Volver', { action: :index }, class: 'btn btn-primary' %>

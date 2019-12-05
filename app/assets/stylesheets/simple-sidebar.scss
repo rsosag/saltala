@@ -1,0 +1,104 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background: #0E9CC8 !important;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.sidebar-links {
+  background: #0E9CC8;
+  color: #FFFF;
+  border: none;
+  padding: 0.75rem 2.25rem;
+}
+
+.top-menu {
+  background: #0E9CC8 !important;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+
+.list-group-item-action:active, .list-group-item-action:hover {
+  color: #0E9CC8;
+  background: #C4F1FE !important;
+  border-radius: 47px 0 0 47px;
+}
+
+.list-group-item.active {
+  color: #0E9CC8;
+  background-color: #C4F1FE;
+  border-color: transparent;
+  border-radius: 47px 0 0 47px;
+}
+
+.table-list h3, .table-list th, .table-list span {
+  color: #0E9CC8;
+}
+
+.table-list td {
+  color: #4A4A4A;
+}
+
+.new-button {
+  background: #0E9CC8;
+  box-shadow: 3px 1px 9px rgba(0, 0, 0, 0.307638);
+  border-radius: 3px;
+}
+
+.new-button a, .btn-primary {
+  text-decoration-line: underline;
+  color: #FFFFFF !important;
+  border-color: inherit;
+}
+
+body {
+  background: radial-gradient(rgba(248, 248, 248, 0.55) 0%, rgba(186, 232, 242, 0.55) 100%, rgba(35, 67, 74, 0.55) 100%);
+}
+
+.page-wrapper {
+  padding-top: 50%;
+}
