@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_160907) do
+ActiveRecord::Schema.define(version: 2019_12_05_172901) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "corporations", force: :cascade do |t|
     t.string "name"
     t.string "rut"
-    t.integer "subsidiary_id"
+    t.bigint "subsidiary_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subsidiary_id"], name: "index_corporations_on_subsidiary_id"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_160907) do
     t.string "first_name"
     t.string "string"
     t.string "last_name"
-    t.integer "corporation_id"
+    t.bigint "corporation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["corporation_id"], name: "index_users_on_corporation_id"
@@ -49,4 +52,5 @@ ActiveRecord::Schema.define(version: 2019_12_05_160907) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "corporations", "subsidiaries"
 end
